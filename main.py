@@ -22,7 +22,7 @@ def api_id():
 
     if results is None:
         return "Invalid Lat long"
-    return "Cloud se aa rha hai"
+    return results
 
 
 @app.errorhandler(404)
