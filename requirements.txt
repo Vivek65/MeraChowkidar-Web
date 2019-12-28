@@ -1,0 +1,4 @@
+Flask==1.1.1
+pyshp==2.1.0
+pandas==0.25.3
+Shapely==1.6.4.post2
