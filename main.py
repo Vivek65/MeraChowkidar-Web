@@ -30,12 +30,12 @@ def page_not_found(e):
     return "<h1>404</h1><p>The resource could not be found.</p>", 404
 
 
+# A welcome message to test our server
+@app.route('/')
+def index():
+    return "<h1>Welcome to our server !!</h1>"
+
+
 if __name__ == '__main__':
-    # This is used when running locally only. When deploying to Google App
-    # Engine, a webserver process such as Gunicorn will serve the app. This
-    # can be configured by adding an `entrypoint` to app.yaml.
-    # Flask's development server will automatically serve static files in
-    # the "static" directory. See:
-    # http://flask.pocoo.org/docs/1.0/quickstart/#static-files. Once deployed,
-    # App Engine itself will serve those files as configured in app.yaml.
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)
